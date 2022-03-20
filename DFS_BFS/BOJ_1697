@@ -11,7 +11,7 @@ while q:
         print(result[now])
         break
     for nx in (now*2,now-1,now+1):
-        if 0 <= nx<MAX and not result[nx]:
+        if 0 <= nx<=MAX and not result[nx]:
             result[nx] = result[now] +1
             q.append(nx)
             
