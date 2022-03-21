@@ -1,0 +1,24 @@
+import sys
+sys.setrecursionlimit(10**6)
+
+n = int(input())
+graph = [[' ' for _ in range(n)] for _ in range(n)]
+def star(n):
+    n_3 = n//3
+    if n == 3:
+        graph[1] = ['*',' ','*']
+        graph[0][:3] = graph[2][:3] = ['*']*3
+        return
+    star(n_3)
+    for i in range(0,n,n_3):
+        for j in range(0,n,n_3):
+            if i != n_3 or j != n_3:
+                for k in range(n_3):
+                    graph[i+k][j:j+n_3] = graph[k][:n_3]
+
+star(n)
+for i in range(n):
+    for j in range(n):
+        print(graph[i][j],end = '')
+    print()
+            
