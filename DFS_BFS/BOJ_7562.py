@@ -22,7 +22,6 @@ def bfs(start):
 for _ in range(t):
     n = int(input())
     visited = [[0] *n for _ in range(n)]
-    cnt = 0
     start = list(map(int,input().split()))
     visited[start[0]][start[1]] = 1
     end = list(map(int,input().split()))
